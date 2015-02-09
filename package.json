@@ -1,10 +1,34 @@
-{"name": "encounters-api",
+{
+  "name": "encounters-api",
   "description": "REST API used by the Encounters App",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-  },
+    "mongoose": "3.8.23",
+    "restify": "2.8.5",
+    "supertest": "0.15.0"
+   },
   "scripts": {
     "start": "app.js"
-  }
+  },
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivamthapar/encounters-api.git"
+  },
+  "keywords": [
+    "encounters"
+  ],
+  "author": "Shivam Thapar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivamthapar/encounters-api/issues"
+  },
+  "homepage": "https://github.com/shivamthapar/encounters-api"
 }
