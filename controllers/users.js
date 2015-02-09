@@ -28,6 +28,29 @@ exports.createUser = function(req, res, next) {
         });
       }
     });
-    /*
-    */
 }
+
+exports.viewUser = function(req,res,next){
+  User.findOne({fbId: req.params.fbId}, function(err, user){
+    if(err){
+      res.status(500);
+      res.json({
+        type:false,
+        data: "Error occured: "+err
+      });
+    }
+    else{
+      if(user != null)
+        res.json({
+          type: true,
+          data: user
+        });
+      else
+        res.json({
+          type: false,
+          data: "Error occured: No user found with such Facebook ID."
+        });
+    }
+  });
+};
+

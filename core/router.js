@@ -22,6 +22,7 @@ server.get('/', function (req, res, next) {
 });
 
 server.post("/users", controllers.users.createUser);
+server.get("/users/:fbId", controllers.users.viewUser);
 
 var port = process.env.PORT || 3000;
 server.listen(port, function (err) {
