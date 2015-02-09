@@ -1,8 +1,11 @@
 var mongoose = require('mongoose')
     , fs = require('fs')
     , models_path = process.cwd() + '/models'
-
-mongoose.connect(process.env.MONGO_URL, {server:{auto_reconnect:true}});
+console.log(process.env.NODE_ENV == "development");
+if(process.env.NODE_ENV == "development")
+  mongoose.connect(process.env.MONGO_URL+"/encounters-db", {server:{auto_reconnect:true}});
+if(process.env.NODE_ENV == "production")
+  mongoose.connect("mongodb://"+process.env.MONGOLAB_URI+"/encounters-db", {server:{auto_reconnect:true}});
 var db = mongoose.connection;
 
 db.on('error', function (err) {
