@@ -1,0 +1,10 @@
+{"name": "encounters-api",
+  "description": "REST API used by the Encounters App",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "app.js"
+  }
+}
