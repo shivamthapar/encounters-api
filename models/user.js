@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-  fb-id: String,
+  fbId: String,
   name: String,
   groups: [{type: Schema.ObjectId, ref: 'Group'}],
 });
